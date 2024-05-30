@@ -1,0 +1,55 @@
+.articleBox {
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 3rem 0.3rem #000000;
+    background-color: rgba(254, 190, 137, 0.7);
+    overflow: hidden;
+}
+
+
+.articleBox__cover {
+    position: relative;
+}
+
+.articleBox__img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 1rem #000;
+    margin-bottom: -0.5rem;
+}
+
+.articleBox__shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8));
+    border-radius: var(--border-radius);
+}
+
+.articleBox__title {
+    position: absolute;
+    bottom: 1rem;
+    color: var(--light-color);
+    font-family: var(--text-font);
+    padding: 1rem;
+    font-size: 2.5rem;
+    width: 100%;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.articleBox__title::before {
+    content: '\2022';
+    padding-left: 0.5rem;
+    position: relative;
+    top: 0.5rem;
+}
+
+.articleBox__content {
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: var(--text-font);
+}

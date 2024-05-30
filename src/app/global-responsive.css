@@ -36,35 +36,6 @@
 
     /* <== end header ==> */
 
-    /* <== start landing ==> */
-    .landing__title {
-        font-size: 2rem;
-    }
-
-    .landing__boldTitle {
-        font-size: 4rem;
-        line-height: 2.1;
-    }
-
-    .landing__subtitle {
-        font-size: 1.8rem;
-    }
-
-    .landin__search-btn {
-        padding-right: 1rem;
-        font-size: 1.5rem;
-    }
-
-    /* <== end landing ==> */
-
-    /* <== start promot ==> */
-    .publicity__description,
-    .promot__description {
-        font-size: 2rem;
-    }
-
-    /* <== end promot ==> */
-
     /* <==================== end main page ====================> */
 
     /* <==================== start details page ====================> */
@@ -368,68 +339,6 @@
 @media (max-width : 576px) {
 
     /* <==================== end main page ====================> */
-    /* <== start landing ==> */
-    .landing {
-        background-position: left;
-        text-align: center;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../../public/images/background.jpg);
-        background-position: left;
-        background-size: cover;
-    }
-
-    .landing__right {
-        align-items: center !important;
-    }
-
-    .landin__search {
-        text-align: start;
-    }
-
-    .last-product {
-        margin-top: 3rem;
-    }
-
-    /* <== end landing ==> */
-    /* <== start product box ==> */
-    .product-box {
-        padding: 1rem;
-    }
-
-    .product-box__price,
-    .product-box__title {
-        font-size: 2rem;
-    }
-
-    .product-box__score {
-        gap: 0.3rem;
-        font-size: 1rem;
-    }
-
-    .product-box__heart-icon,
-    .product-box__like-icon {
-        font-size: 1.5rem;
-    }
-
-    /* <== end product box ==> */
-
-    /* <== start promot and publicity ==> */
-    .publicity__wrapper,
-    .promot__details {
-        align-items: center;
-    }
-
-    .promot__btn-contaner {
-        gap: 1rem;
-    }
-
-    /* <== end promot and publicity ==> */
-
-    /* <== start footer ==> */
-    .footer__copy-right {
-        font-size: 1rem;
-    }
-
-    /* <== end footer ==> */
 
     .section-title,
     .publicity__title,

@@ -1,11 +1,28 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import style from './Header.module.css'
 import { IoMdClose } from "react-icons/io";
 import { FaCaretLeft } from "react-icons/fa";
 import { LuMenu } from "react-icons/lu";
 
 export default function Header() {
+
+    const [lightHeader , setLightHeader] = useState(true)
+
+    useEffect(()=>{
+        function changeStyleOfHeader(){
+            const scrollValue = window.scrollY
+            if(scrollValue!==0){
+                setLightHeader(false)
+            }else{
+                console.log("hhhh")
+                setLightHeader(true)
+            }
+        }
+
+        window.addEventListener('scroll' , changeStyleOfHeader);
+        return ()=> window.removeEventListener('scroll' , changeStyleOfHeader)
+    },[])
     
     const headerMenu = useRef()
     const shadowElm = useRef()
@@ -21,7 +38,7 @@ export default function Header() {
         shadowElm.current.classList.remove(style.header__shadowMenuShow)
       }
     return (
-        <header className={style.header}>
+        <header className={`${style.header} ${lightHeader ? style.headerWhithoutBackground : ''}`}>
         <div className='container'>
         <div className={style.header__shadowMenu} ref={shadowElm} onClick={closeMobileMenu}></div>
             <div className={`${style.header__content} flex-between-center`}>

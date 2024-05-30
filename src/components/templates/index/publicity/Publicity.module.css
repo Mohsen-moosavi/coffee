@@ -1,0 +1,40 @@
+.publicity__content {
+    overflow: hidden;
+}
+
+.publicity__details {
+    margin-bottom: 2rem;
+}
+
+.publicity__title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.publicity__subtitle {
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+
+.publicity__description {
+    text-align: justify;
+    font-size: 3rem;
+    font-family: var(--text-font);
+    color: var(--primary-color);
+}
+
+.publicity__image {
+    width: 100%;
+    border-radius: var(--border-radius);
+    border: 4px solid var(--primary-color);
+}
+
+
+
+@media (max-width : 576px) {
+
+    .publicity__wrapper {
+        align-items: center;
+    }
+}
