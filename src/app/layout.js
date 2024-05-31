@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './globals.css'
 import AOS from '@/components/modules/AOS/AOS';
+import ScrollToTop from '@/components/modules/scrollToTop/ScrollToTop';
 
 export const metadata = {
   title: 'Coffee chee',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <html>
       <body dir='rtl'>
         <AOS/>
+        <ScrollToTop/>
         {children}
         </body>
     </html>

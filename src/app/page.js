@@ -11,13 +11,13 @@ export default function Home() {
     <>
       <Header />
       <main>
-      <Landing />
-      <LastProducts/>
-      <Promot/>
-      <Publicity/>
-      <LastArticles/>
+        <Landing />
+        <LastProducts />
+        <Promot />
+        <Publicity />
+        <LastArticles />
       </main>
-      <Footer/>
+      <Footer />
     </>
   )
 }
