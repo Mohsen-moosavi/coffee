@@ -1,9 +1,10 @@
-import { generateToken, hashPassword, nameValidator, passwordValidator, phoneValidator } from "@/utils/auth";
+import { generateToken, hashPassword } from "@/utils/auth";
 import connectToDB from "../../../../../confings/db"
 import userModel from "../../../../../models/user.model";
 import { roles } from "@/utils/Constant";
+import { nameValidator, passwordValidator, phoneValidator } from "@/utils/validators";
 
-export async function GET(req){
+export async function POST(req){
     try {
         connectToDB()
 
@@ -18,6 +19,7 @@ export async function GET(req){
         }
 
         const isUserAllreadyExist = await userModel.findOne({phone});
+
 
         if(isUserAllreadyExist){
             return Response.json({message : "user allreadyExist"} , {status : 422})

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = mongoose.schema({
+const userSchema =new mongoose.Schema({
     phone: {
         type: Number,
         required: true,
@@ -29,6 +29,6 @@ const userSchema = mongoose.schema({
     }
 })
 
-const userModel = mongoose.models?.User || mongoose.model("'User",userSchema,"Users")
+const userModel = mongoose.models?.User || mongoose.model("User",userSchema,"Users")
 
 export default userModel
