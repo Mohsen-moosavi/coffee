@@ -14,13 +14,14 @@ function comparePassword(password,hashedPassword){
 
 function generateToken(data){
     const token = sign({...data},process.env.HWT_PRIVATE_SECRET_KEY,{
-        expiresIn : '60s'
+        expiresIn : '60d'
     })
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" , token)
     return token
 }
 
 function generateRefreshToken(data){
-    const refreshToken = sign(data,process.env.REFRESH_TOKEN_JWT_PRIVATE_SECRET_KEY,{
+    const refreshToken = sign({...data},process.env.REFRESH_TOKEN_JWT_PRIVATE_SECRET_KEY,{
         expiresIn : '15d'
     })
     return refreshToken;

@@ -60,8 +60,6 @@ export default function paage() {
       }, body: JSON.stringify(user)
     })
 
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-
 
     if (res.status === 201) {
       showSwal("ثبت نام با موفقیت انجام شد.", 'success', "تایید")
