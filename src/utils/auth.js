@@ -1,5 +1,9 @@
+import connectToDB from "../../confings/db";
+import userModel from "../../models/user.model";
+
 const { hashSync, compareSync } = require("bcrypt");
 const { sign, verify } = require("jsonwebtoken");
+const {cookies} = require("next/headers")
 
 
 function hashPassword(password){
@@ -16,7 +20,6 @@ function generateToken(data){
     const token = sign({...data},process.env.HWT_PRIVATE_SECRET_KEY,{
         expiresIn : '60d'
     })
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" , token)
     return token
 }
 
@@ -30,11 +33,24 @@ function generateRefreshToken(data){
 function verifyToken(token){
     try {
         const tokenPayload = verify(token,process.env.HWT_PRIVATE_SECRET_KEY)
+        return tokenPayload
     } catch (error) {
-        console.log(error)
         return false
     }
 
+}
+
+async function isUserLogin(){
+    connectToDB()
+    const token = cookies().get('token')
+    if(token){
+        const tokenPayload = verifyToken(token.value)
+        if(tokenPayload){
+            const user = await userModel.findOne({phone : tokenPayload.phone})
+            return user
+        }
+    }
+    return false
 }
 
 export {
@@ -42,5 +58,6 @@ export {
     comparePassword,
     generateToken,
     generateRefreshToken,
-    verifyToken
+    verifyToken,
+    isUserLogin
 }

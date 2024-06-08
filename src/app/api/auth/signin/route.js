@@ -27,8 +27,8 @@ export async function POST(req){
             return Response.json({message:"phone number and password are not match"},{status : 401})
         }
 
-        const accessToken = generateToken("phone")
-        const refreshToken = generateRefreshToken("phone")
+        const accessToken = generateToken({phone})
+        const refreshToken = generateRefreshToken({phone})
 
         await userModel.findOneAndUpdate({phone} , {$set : {refreshToken}})
 
