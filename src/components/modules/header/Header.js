@@ -63,7 +63,7 @@ export default function Header({ isUserLogin }) {
                                 <a href="#" className={style.menu__link}>تماس با ما</a>
                             </li>
                             <li className={style.menu__item}>
-                                <a href="#" className={style.menu__link}>درباره ما</a>
+                                <a href="/about-us" className={style.menu__link}>درباره ما</a>
                             </li>
                             <li className={style.menu__item}>
                                 <a href="#" className={style.menu__link}>قوانین</a>

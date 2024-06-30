@@ -154,3 +154,38 @@ section{
   background-color: var(--primary-color);
   color: var(--light-color);
 }
+
+/* not found page */
+.not-found{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-direction: column;
+  background: var(--dark-color);
+}
+
+.not-found__404{
+  font-size: 20vw;
+}
+
+.not-found__text , .not-found__404{
+  font-weight: bolder;
+  color: #00fffd;
+  text-shadow: 0 0 7rem #00fffd;
+}
+
+.not-found__text{
+  font-size: 10vw;
+}
+
+.not-found__link{
+  background-color: #00fffd;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border-radius: 2rem;
+  box-shadow: 0 0 7rem #00fffd;
+}
