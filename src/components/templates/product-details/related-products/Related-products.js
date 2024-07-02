@@ -5,13 +5,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import ProductCard from '@/components/modules/productCard/ProductCard';
+import connectToDB from '../../../../../confings/db';
+import productsModel from '../../../../../models/products.model';
+import { SUITABLE_TYPES } from '@/utils/Constant';
 
-export default function RelatedProducts() {
+export default function RelatedProducts({ relatedProducts, productID }) {
+
   return (
-    <section class={style.relatedProduct}>
-      <div class="container">
+    <section className={style.relatedProduct}>
+      <div className="container">
         <div className={style.swiper}>
-          <h4 class={style.srelatedProductTtle}>محصولات مرتبط</h4>
+          <h4 className={style.srelatedProductTtle}>محصولات مرتبط</h4>
 
 
           <Swiper
@@ -41,21 +45,15 @@ export default function RelatedProducts() {
               }
             }}
           >
-            <SwiperSlide className={style.swiperSlide}>
-              <ProductCard/>
-            </SwiperSlide>
-            <SwiperSlide className={style.swiperSlide}>
-              <ProductCard/>
-            </SwiperSlide>
-            <SwiperSlide className={style.swiperSlide}>
-              <ProductCard/>
-            </SwiperSlide>
-            <SwiperSlide className={style.swiperSlide}>
-              <ProductCard/>
-            </SwiperSlide>
-            <SwiperSlide className={style.swiperSlide}>
-              <ProductCard/>
-            </SwiperSlide>
+            {relatedProducts.map((product, index) => {
+              if (product._id !== productID) {
+                return (
+                  <SwiperSlide className={style.swiperSlide} key={index}>
+                    <ProductCard {...product}/>
+                  </SwiperSlide>
+                )
+              }
+            })}
 
           </Swiper>
 

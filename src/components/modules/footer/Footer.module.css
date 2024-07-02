@@ -55,7 +55,8 @@
 }
 
 .footerItem__img {
-    width: 100%;
+    width: 100% !important;
+    height: auto;
 }
 
 .footer__bottom {

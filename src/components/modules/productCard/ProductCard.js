@@ -4,13 +4,14 @@ import { FaStar } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 import { BsFillCartDashFill } from "react-icons/bs";
 import { FaHeart } from "react-icons/fa";
+import Image from 'next/image';
 
 
 export default function ProductCard() {
     return (
         <div className={style.productBox}>
             <div className={style.productBox__cover}>
-                <img src="./images/coffee1.jpg" className={style.productBox__img} alt="coffee" />
+                <Image src={'/'+"images/coffee1.jpg"} width={500} height={400} className={style.productBox__img} alt="coffee" />
                 <div className={style.productBox__coverShadow}></div>
             </div>
             <span className={style.productBox__title}>قهوه لاته</span>

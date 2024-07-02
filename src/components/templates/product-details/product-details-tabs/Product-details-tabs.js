@@ -5,7 +5,7 @@ import DescriptionTab from './description-tab/Description-tab'
 import MoreDetailsTab from './more-details-tab/More-details-tab'
 import CommentsTab from './comments-tab/Comments-tab'
 
-export default function ProductDetailsTabs() {
+export default function ProductDetailsTabs(props) {
 
     const tabLinks = useRef()
     const tabContent = useRef()
@@ -41,13 +41,13 @@ export default function ProductDetailsTabs() {
                 </ul>
                 <div className={style.productTabsDetails} ref={tabContent}>
                     <div className={`${style.productTabsItem} ${style.productTabsItemActive}`}>
-                        <DescriptionTab/>
+                        <DescriptionTab longDescription={props.longDescription}/>
                     </div>
                     <div className={style.productTabsItem}>
-                        <MoreDetailsTab/>
+                        <MoreDetailsTab smell={props.smell} suitable={props.suitable} weight={props.weight}/>
                     </div>
                     <div className={style.productTabsItem}>
-                        <CommentsTab/>
+                        <CommentsTab comments={props.comments} productID={props._id} user={props.userID} userName={props.userName}/>
                     </div>
                 </div>
             </div>

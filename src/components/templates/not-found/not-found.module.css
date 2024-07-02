@@ -1,0 +1,33 @@
+.notFound{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-direction: column;
+    background: var(--dark-color);
+  }
+  
+  .notFound__404{
+    font-size: 20vw;
+  }
+  
+  .notFound__text , .notFound__404{
+    font-weight: bolder;
+    color: #00fffd;
+    text-shadow: 0 0 7rem #00fffd;
+  }
+  
+  .notFound__text{
+    font-size: 10vw;
+  }
+  
+  .notFound__link{
+    background-color: #00fffd;
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    box-shadow: 0 0 7rem #00fffd;
+  }

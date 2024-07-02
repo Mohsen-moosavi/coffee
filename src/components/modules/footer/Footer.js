@@ -2,6 +2,7 @@ import React from 'react'
 import style from './Footer.module.css'
 import { FaMap } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -64,13 +65,13 @@ export default function Footer() {
                     <div className="footer-item">
                         <div className="row justify-content-center">
                             <div className="col-2 col-lg-4">
-                                <img src="./images/license1.png" className={style.footerItem__img} alt="enemad"/>
+                                <Image src={'/'+"./images/license1.png"} width={500} height={400} className={style.footerItem__img} alt="enemad"/>
                             </div>
                             <div className="col-2 col-lg-4">
-                                <img src="./images/license2.svg" className={style.footerItem__img} alt="etehadieh"/>
+                                <Image src={'/'+"./images/license2.svg"} width={500} height={400} className={style.footerItem__img} alt="etehadieh"/>
                             </div>
                             <div className="col-2 col-lg-4">
-                                <img src="./images/license3.png" className={style.footerItem__img} alt="mellat"/>
+                                <Image src={'/'+"./images/license3.png"} width={500} height={400} className={style.footerItem__img} alt="mellat"/>
                             </div>
                         </div>
                     </div>

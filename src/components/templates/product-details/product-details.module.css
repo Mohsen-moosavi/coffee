@@ -136,13 +136,14 @@
 
 .productDetailsImgCircleImg {
     position: absolute;
-    /* width: 100vw; */
+    width: 160vw;
     height: 75%;
     bottom: 0;
     left: 0;
 }
 
 .productDetailsImg {
+    height: auto;
     width: 100%;
     z-index: 2;
 }
@@ -221,10 +222,31 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     margin-bottom: 2rem;
     width: 100%;
+}
+
+.productCommentUserAndScore{
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productCommentScoreWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-wrap: nowrap;
+    gap: 0.2rem;
+}
+
+.productCommentScore{
+    color: var(--primary-color);
+    font: 0.8rem;
 }
 
 .productCommentHead{
@@ -236,6 +258,7 @@
 
 .productCommentImg{
     width: 5rem;
+    height: auto;
     border-radius: 50%;
     margin-left: 2rem;
 }
@@ -261,7 +284,19 @@
     text-align: justify;
 }
 
-.productTabsTextarea{
+.commentsTabContact__notLogin{
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 0.8rem;
+    font-family: var(--text-font);
+    color: var(--light-color);
+    font-size: 2rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+.productTabsTextarea,.productTabsScoreField{
     width: 100%;
     background-color: rgba(220, 119, 24, 0.2);
     border: 1px solid var(--primary-color);
@@ -272,6 +307,16 @@
     color: var(--light-color);
     font-family: var(--text-font);
     font-size: 2rem;
+}
+
+.productTabsScoreField{
+    display: block;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.productTabsScoreItem{
+    color: var(--primary-color);
 }
 
 .productTabsTextarea::placeholder{
@@ -346,6 +391,10 @@
     height: 100%;
     object-fit: cover;
 }
+
+/* .productBoxStarIcon {
+    color: var(--secondary-color);
+} */
 
 /* .product-box {
     display: flex;
@@ -430,6 +479,10 @@
     .productDetailsPrice {
         font-size: 3rem;
     }
+
+    .productCommentUserAndScore{
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width : 768px) {
@@ -443,6 +496,10 @@
     .productDetailsShortDescription {
         font-size: 2rem;
     }
+    
+    .productCommentUserAndScore{
+        flex-wrap: nowrap;
+    }
 }
 
 @media (max-width : 576px) {
@@ -452,6 +509,7 @@
     }
 
     .productDetailsCover {
+        margin-top: 3rem;
         padding: 3rem 0 4rem;
         margin-bottom: 3rem;
     }
@@ -540,5 +598,10 @@
     .srelatedProductTtle{
         font-size: 3rem;
     }
+
+    .productTabsScoreField{
+        font-size: 1rem;
+    }
+
     
 }

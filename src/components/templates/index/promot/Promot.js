@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './Promot.module.css'
+import Image from 'next/image'
 
 export default function Promot() {
     return (
@@ -8,7 +9,7 @@ export default function Promot() {
                 <div className={style.promot__content}>
                     <div className="row">
                         <div className="col-12 col-md-6">
-                            <img src="./images/Home32.jpg" className={style.promot__img} alt="pomote" />
+                            <Image src={'/'+"images/Home32.jpg"} width={500} height={400} className={style.promot__img} alt="pomote" />
                         </div>
                         <div className={`col-12 col-md-6 flex-column-center-start ${style.promot__details}`}>
                             <h4 className={style.promot__title}>چرا قهوه چی؟</h4>

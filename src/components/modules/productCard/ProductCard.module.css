@@ -19,6 +19,7 @@
 .productBox__img {
     transition: var(--transition);
     width: 100%;
+    height: auto;
     margin-bottom: -0.6rem;
 }
 

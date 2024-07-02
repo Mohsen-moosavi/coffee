@@ -1,11 +1,12 @@
 import React from 'react'
 import style from './Article.module.css'
+import Image from 'next/image'
 
 export default function ArticleBox() {
     return (
         <div className={style.articleBox}>
             <div className={style.articleBox__cover}>
-                <img src="./images/coffee1.jpg" className={style.articleBox__img} alt="article"/>
+                <Image src={'/'+"images/coffee1.jpg"} width={500} height={400} className={style.articleBox__img} alt="article"/>
                     <div className={style.articleBox__shadow}></div>
                     <h6 className={style.articleBox__title}>مصرف قهوه به همراه شیر برای کاهش التهاب بیندس بسنی تسنبیا
                         تبسایت ن ساتتیباسنل</h6>

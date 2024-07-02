@@ -1,7 +1,10 @@
 import React from 'react'
 import style from './../product-details.module.css'
+import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa6";
+import Image from 'next/image';
 
-export default function ProductInfo() {
+export default function ProductInfo(props) {
 
     return (
         <section className={style.productDetails}>
@@ -9,47 +12,47 @@ export default function ProductInfo() {
                 <div className="row">
                     <div className="col-12 col-sm-4">
                         <div className={style.productDetailsCover}>
-                            <img src="./images/products/cappochino-1.png" className={style.productDetailsImg} alt="cappochino" />
+                            <Image src={'/'+"images/products/cappochino-1.png"} className={style.productDetailsImg} alt="cappochino" width={500} height={400}/>
                             <div className={style.productDetailsImgCircle}>
-                                <img src="./images/product-background.jpg" className={style.productDetailsImgCircleImg} alt="back" />
+                                <Image src={'/'+'images/product-background.jpg'} className={style.productDetailsImgCircleImg} alt="back" width={500} height={400} />
                             </div>
                         </div>
                     </div>
                     <div className="col-12 col-sm-8">
                         <div className={`${style.productDetailsMainInfo} flex-between-center`}>
                             <div className={style.productDetailsMainInfoWrapper}>
-                                <h1 className={style.productDetailsTitle}>کاپوچینو بدون قند - 12.5 گرم بسته 20 عددی</h1>
+                                <h1 className={style.productDetailsTitle}>{props.name}</h1>
                                 <div className={style.productDetailsScore}>
-                                    <i className="bi bi-star-fill product-box__star-icon"></i>
-                                    <i className="bi bi-star-fill product-box__star-icon"></i>
-                                    <i className="bi bi-star-fill product-box__star-icon"></i>
-                                    <i className="bi bi-star-fill product-box__star-icon"></i>
-                                    <i className="bi bi-star product-box__star-icon"></i>
+                                    {
+                                        Array(props.score).fill(0).map(i=>(
+                                            <FaStar className="product-box__star-icon"/>
+                                        ))
+                                    }
+                                    {
+                                        Array(5 - props.score).fill(0).map(i=>(
+                                            <FaRegStar className="product-box__star-icon"/>
+                                        ))
+                                    }
                                 </div>
                             </div>
-                            <span className={style.productDetailsPrice}>24,000 تومان</span>
+                            <span className={style.productDetailsPrice}>{props.price?.toLocaleString()} تومان</span>
                         </div>
                         <div className={style.productDetailsShortDescriptionWrapper}>
                             <span className={style.productDetailsShortDescriptionTitle}>درباره محصول:</span>
-                            <p className={style.productDetailsShortDescription}>
-                                کاپوچینو بدون قند یکی از سالم ترین نوشیدنی های گرمی است که شما می توانید تجربه کنید. با
-                                توجه به طعم بسیار خوب این نوشیدنی، می توانید لحظات بسیار زیبا و خاطره انگیزی را در کنار
-                                هم دیگر تجره کنید. با اینکه این محصول قند بسیار کمی دارد، اما کاملا مزه دلچسب و بی نظیری
-                                دارد که که از این نظر با همتا های قند دار خود برابری می کند.
-                            </p>
+                            <p className={style.productDetailsShortDescription}>{props.shortDescription}</p>
                         </div>
                         <div className={`${style.productDetailsSubDetails} flex-between-center`}>
                             <div>
                                 <span className={style.productDetailsSubDetailKey}>موجودی: </span>
-                                <span className={style.productDetailsSubDetailValue}>13</span>
+                                <span className={style.productDetailsSubDetailValue}>{props.store}</span>
                             </div>
                             <div>
                                 <span className={style.productDetailsSubDetailKey}>دیدگاه: </span>
-                                <span className={style.productDetailsSubDetailValue}>9</span>
+                                <span className={style.productDetailsSubDetailValue}>{props.commentsLength || 0}</span>
                             </div>
                             <div >
                                 <span className={style.productDetailsSubDetailKey}>تولید کننده: </span>
-                                <span className={style.productDetailsSubDetailValue}>شرکت ایران کافه</span>
+                                <span className={style.productDetailsSubDetailValue}>{props.company}</span>
                             </div>
                         </div>
                         <div className={style.productDetailsOrder}>

@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './Publicity.module.css'
+import Image from 'next/image'
 
 export default function Publicity() {
     return (
@@ -8,7 +9,7 @@ export default function Publicity() {
                 <div className={style.publicity__content}>
                     <div className="row gy-3">
                         <div className="col-12 col-md-6 order-md-2">
-                            <img src="./images/clubset1.jpg" className={style.publicity__image} alt="club" />
+                            <Image src={'/'+"images/clubset1.jpg"} width={500} height={400} className={style.publicity__image} alt="club" />
                         </div>
                         <div className={`col-12 col-md-6 flex-column-center-start ${style.publicity__wrapper}`}>
                             <div className={style.publicity__details}>
