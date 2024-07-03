@@ -1,0 +1,26 @@
+.search{
+    margin: 10rem 0;
+}
+.search__content{
+    box-shadow: inset 0rem 0rem 1rem 0.3rem #000;
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1.5rem;
+}
+
+.landin__searchBtn{
+    color: var(--light-color);
+    font-size: 2rem;
+    font-family: var(--text-font);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.landin__searchBtn::placeholder{
+    color: #ababab;
+}
+
+.landin__searchIcon{
+    color: var(--light-color);
+}
