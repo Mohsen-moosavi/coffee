@@ -83,7 +83,7 @@ export default function Header({ isUserLogin }) {
                                             <a href="#" className={style.submenu__link}>کامنت ها</a>
                                         </li>
                                         <li className={style.submenu__item}>
-                                            <a href="#" className={style.submenu__link}>علاقه مندی ها</a>
+                                            <Link href="/wishlist" className={style.submenu__link}>علاقه مندی ها</Link>
                                         </li>
                                         <li className={style.submenu__item}>
                                             <a href="#" className={style.submenu__link}>جرئیات حساب کاربری</a>

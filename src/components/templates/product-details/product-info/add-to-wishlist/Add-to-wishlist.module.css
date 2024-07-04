@@ -1,0 +1,66 @@
+.productDetailsAddToCard,
+.productDetailsRemoveTheCard,
+.productDetailsAddToBag{
+    height: 4rem;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+
+.productDetailsAddToBag {
+    margin-top: 3rem;
+    font-size: 3rem;
+}
+
+.productDetailsRemoveTheCard:hover .productDetailsRemoveTheCardIcon{
+    color: var(--primary-color);
+}
+
+.productDetailsAddToBagIcon,
+.productDetailsAddToCardIcon,
+.productDetailsRemoveTheCardIcon {
+    margin-right: 1rem;
+    transition: var(--transition);
+}
+
+.productDetailsAddToBag:hover,
+.productDetailsAddToCard:hover,
+.productDetailsRemoveTheCard{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.productDetailsRemoveTheCard:hover{
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.productDetailsAddToBag:hover .productDetailsAddToBagIcon,
+.productDetailsAddToCard:hover .productDetailsAddToCardIcon,
+.productDetailsRemoveTheCardIcon {
+    color: var(--light-color);
+}
+
+@media (max-width : 576px) {
+    .productDetailsAddToCard,
+    .productDetailsAddToBag {
+        height: 4rem;
+        line-height: 3rem;
+    }
+
+    .productDetailsOrderCount,
+    .productDetailsAddToCard,
+    .productDetailsAddToBag {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .productDetailsAddToBag {
+        margin-top: 2rem;
+        font-size: 2rem;
+    }
+}

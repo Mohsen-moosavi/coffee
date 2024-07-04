@@ -9,7 +9,6 @@ import connectToDB from '../../../../confings/db'
 import productsModel from '../../../../models/products.model'
 import NotFound from '@/components/templates/not-found/Not-found'
 import { isValidObjectId } from 'mongoose'
-import { SUITABLE_TYPES } from '@/utils/Constant'
 
 export default async function page({ params }) {
 
@@ -35,6 +34,8 @@ export default async function page({ params }) {
             <Header isUserLogin={!!user} />
             <main>
                 <ProductInfo
+                    userID={user?._id}
+                    productID={productDetails._id}
                     name={productDetails.name}
                     commentsLength={productDetails.comments?.filter((comment) => comment.isShow).length}
                     price={productDetails.price}

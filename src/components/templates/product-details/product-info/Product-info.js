@@ -3,6 +3,7 @@ import style from './../product-details.module.css'
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa6";
 import Image from 'next/image';
+import AddToWishlist from './add-to-wishlist/Add-to-wishlist';
 
 export default function ProductInfo(props) {
 
@@ -61,10 +62,7 @@ export default function ProductInfo(props) {
                                 <span>1</span>
                                 <button className={style.productDetailsOrderCountPlus}>+</button>
                             </div>
-                            <button className={style.productDetailsAddToCard}>
-                                افزودن به علافه مندی ها
-                                <i className="bi bi-suit-heart-fill productDetailsAddToCardIcon"></i>
-                            </button>
+                            <AddToWishlist userID={props.userID} productID={props.productID}/>
                         </div>
 
                         <button className={style.productDetailsAddToBag}>
